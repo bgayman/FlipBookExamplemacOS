@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		CDB83FC023DBE722003451F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB83FBF23DBE722003451F9 /* ViewController.swift */; };
 		CDB83FC223DBE727003451F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB83FC123DBE727003451F9 /* Assets.xcassets */; };
 		CDB83FC523DBE727003451F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB83FC323DBE727003451F9 /* Main.storyboard */; };
+		CDB83FCF23DBE762003451F9 /* FlipBook in Frameworks */ = {isa = PBXBuildFile; productRef = CDB83FCE23DBE762003451F9 /* FlipBook */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDB83FCF23DBE762003451F9 /* FlipBook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,9 @@
 			dependencies = (
 			);
 			name = FlipBookMacTest;
+			packageProductDependencies = (
+				CDB83FCE23DBE762003451F9 /* FlipBook */,
+			);
 			productName = FlipBookMacTest;
 			productReference = CDB83FBA23DBE722003451F9 /* FlipBookMacTest.app */;
 			productType = "com.apple.product-type.application";
@@ -107,6 +112,9 @@
 				Base,
 			);
 			mainGroup = CDB83FB123DBE722003451F9;
+			packageReferences = (
+				CDB83FCD23DBE762003451F9 /* XCRemoteSwiftPackageReference "FlipBook" */,
+			);
 			productRefGroup = CDB83FBB23DBE722003451F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -323,6 +331,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDB83FCD23DBE762003451F9 /* XCRemoteSwiftPackageReference "FlipBook" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bgayman/FlipBook.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDB83FCE23DBE762003451F9 /* FlipBook */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB83FCD23DBE762003451F9 /* XCRemoteSwiftPackageReference "FlipBook" */;
+			productName = FlipBook;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDB83FB223DBE722003451F9 /* Project object */;
 }

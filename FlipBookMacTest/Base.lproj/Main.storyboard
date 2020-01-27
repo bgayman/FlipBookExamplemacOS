@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="FlipBookMacTest" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,11 +684,13 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="270"/>
+                        <value key="maxSize" type="size" width="480" height="270"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -700,18 +703,230 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--GIF-->
+        <scene sceneID="qX8-pX-R22">
+            <objects>
+                <viewController title="GIF" id="SAp-LJ-U1z" customClass="GIFViewController" customModule="FlipBookMacTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="cQa-XC-iIl">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="lds-Zz-hyE">
+                                <rect key="frame" x="20" y="250" width="30" height="30"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A66-dn-8vn">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="0E7-0v-kUX">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="share:" target="SAp-LJ-U1z" id="Jwa-JI-kt9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8bU-o0-sql"/>
+                                    <constraint firstItem="A66-dn-8vn" firstAttribute="leading" secondItem="lds-Zz-hyE" secondAttribute="leading" id="a6L-if-HeH"/>
+                                    <constraint firstAttribute="trailing" secondItem="A66-dn-8vn" secondAttribute="trailing" id="kRn-sW-rOD"/>
+                                    <constraint firstItem="A66-dn-8vn" firstAttribute="top" secondItem="lds-Zz-hyE" secondAttribute="top" id="qJj-GP-Zjc"/>
+                                    <constraint firstAttribute="width" constant="30" id="w6r-Nf-XWT"/>
+                                    <constraint firstAttribute="bottom" secondItem="A66-dn-8vn" secondAttribute="bottom" id="xwF-rx-4XF"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lds-Zz-hyE" firstAttribute="leading" secondItem="cQa-XC-iIl" secondAttribute="leading" constant="20" symbolic="YES" id="2of-nm-sPf"/>
+                            <constraint firstItem="lds-Zz-hyE" firstAttribute="top" secondItem="cQa-XC-iIl" secondAttribute="top" constant="20" symbolic="YES" id="xdW-5M-irH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shareButton" destination="A66-dn-8vn" id="rRo-CD-VSs"/>
+                        <outlet property="shareVisualEffectView" destination="lds-Zz-hyE" id="7Q5-eJ-pEG"/>
+                    </connections>
+                </viewController>
+                <customObject id="28u-ge-N7O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-565" y="655"/>
+        </scene>
+        <!--FlipBook-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="FlipBook" id="XfG-lQ-9wD" customClass="ViewController" customModule="FlipBookMacTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="0rY-cI-RGu">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            </customView>
+                            <progressIndicator hidden="YES" wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="1qX-t2-XrR">
+                                <rect key="frame" x="20" y="125" width="440" height="20"/>
+                            </progressIndicator>
+                            <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="x3F-Cs-fh1">
+                                <rect key="frame" x="0.0" y="230" width="480" height="40"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-T8-Pa4">
+                                        <rect key="frame" x="360" y="10" width="100" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zcv-Ac-YH8"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" title="Record View" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="n3p-nE-HZv">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="recordView:" target="XfG-lQ-9wD" id="fUi-NM-8cC"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="age-M3-PEh">
+                                        <rect key="frame" x="146" y="8" width="188" height="24"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="axV-cL-6yI">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment label="Video"/>
+                                                <segment label="Live Photo" selected="YES" tag="1"/>
+                                                <segment label="GIF"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="changeSegment:" target="XfG-lQ-9wD" id="Bj4-46-fvV"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="s7p-T8-Pa4" secondAttribute="trailing" constant="20" symbolic="YES" id="0p5-VY-pX8"/>
+                                    <constraint firstAttribute="height" constant="40" id="FY7-HW-a5o"/>
+                                    <constraint firstItem="s7p-T8-Pa4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="age-M3-PEh" secondAttribute="trailing" constant="8" symbolic="YES" id="XV7-8J-SWa"/>
+                                    <constraint firstItem="age-M3-PEh" firstAttribute="centerY" secondItem="x3F-Cs-fh1" secondAttribute="centerY" id="bFI-fe-Qd6"/>
+                                    <constraint firstItem="s7p-T8-Pa4" firstAttribute="centerY" secondItem="x3F-Cs-fh1" secondAttribute="centerY" id="iRI-C1-rcx"/>
+                                    <constraint firstItem="age-M3-PEh" firstAttribute="centerX" secondItem="x3F-Cs-fh1" secondAttribute="centerX" id="noM-iR-tmC"/>
+                                    <constraint firstItem="s7p-T8-Pa4" firstAttribute="height" secondItem="age-M3-PEh" secondAttribute="height" id="xoB-rs-nft"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="x3F-Cs-fh1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="3i5-Lm-49P"/>
+                            <constraint firstAttribute="trailing" secondItem="x3F-Cs-fh1" secondAttribute="trailing" id="5JM-rQ-inI"/>
+                            <constraint firstItem="x3F-Cs-fh1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5aw-r3-tfH"/>
+                            <constraint firstItem="1qX-t2-XrR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="EQc-0K-UK2"/>
+                            <constraint firstItem="0rY-cI-RGu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="O60-HW-XW6"/>
+                            <constraint firstAttribute="trailing" secondItem="1qX-t2-XrR" secondAttribute="trailing" constant="20" symbolic="YES" id="d3o-xW-9jC"/>
+                            <constraint firstItem="0rY-cI-RGu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="eW5-Ud-kcW"/>
+                            <constraint firstAttribute="bottom" secondItem="0rY-cI-RGu" secondAttribute="bottom" id="imQ-Kk-ERe"/>
+                            <constraint firstItem="1qX-t2-XrR" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="sKt-sw-zM6"/>
+                            <constraint firstAttribute="trailing" secondItem="0rY-cI-RGu" secondAttribute="trailing" id="wsh-Mt-bJr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="0rY-cI-RGu" id="4UA-78-oYQ"/>
+                        <outlet property="progressIndicator" destination="1qX-t2-XrR" id="Mua-56-yyi"/>
+                        <outlet property="recordViewButton" destination="s7p-T8-Pa4" id="aBY-Nr-SRc"/>
+                        <outlet property="segmentControl" destination="age-M3-PEh" id="6cP-cs-EHm"/>
+                        <segue destination="Ytj-ei-ycH" kind="modal" identifier="video" id="i8F-Rs-Yut"/>
+                        <segue destination="tzO-GN-n1r" kind="modal" identifier="livephoto" id="iY4-3s-pzg"/>
+                        <segue destination="SAp-LJ-U1z" kind="modal" identifier="gif" id="2My-nc-rXc"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--Live Photo View Controller-->
+        <scene sceneID="aJ7-Di-NnD">
+            <objects>
+                <viewController id="tzO-GN-n1r" customClass="LivePhotoViewController" customModule="FlipBookMacTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="dVq-qu-a9B">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="h4o-vh-j9r">
+                                <rect key="frame" x="20" y="250" width="30" height="30"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-ev-gC6">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="gJ3-rz-xAH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="share:" target="tzO-GN-n1r" id="YEM-Er-bCO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2eg-ev-gC6" firstAttribute="leading" secondItem="h4o-vh-j9r" secondAttribute="leading" id="3aN-76-Cb3"/>
+                                    <constraint firstAttribute="trailing" secondItem="2eg-ev-gC6" secondAttribute="trailing" id="3oT-5z-L50"/>
+                                    <constraint firstAttribute="width" constant="30" id="7Rd-aE-KdS"/>
+                                    <constraint firstAttribute="bottom" secondItem="2eg-ev-gC6" secondAttribute="bottom" id="UY0-nk-Ozf"/>
+                                    <constraint firstItem="2eg-ev-gC6" firstAttribute="top" secondItem="h4o-vh-j9r" secondAttribute="top" id="WKQ-Ub-Qor"/>
+                                    <constraint firstAttribute="height" constant="30" id="h0G-XH-Nqp"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="h4o-vh-j9r" firstAttribute="leading" secondItem="dVq-qu-a9B" secondAttribute="leading" constant="20" symbolic="YES" id="RMi-HW-Udl"/>
+                            <constraint firstItem="h4o-vh-j9r" firstAttribute="top" secondItem="dVq-qu-a9B" secondAttribute="top" constant="20" symbolic="YES" id="XsX-LK-AxW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shareButton" destination="2eg-ev-gC6" id="rob-xv-asp"/>
+                        <outlet property="shareVisualEffectView" destination="h4o-vh-j9r" id="mCu-Ou-oTP"/>
+                    </connections>
+                </viewController>
+                <customObject id="fKU-Rs-h8A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="1127"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="vgp-kF-ori">
+            <objects>
+                <viewController id="Ytj-ei-ycH" customClass="VideoViewController" customModule="FlipBookMacTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="6EP-gE-Rmi">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-6T-i4j">
+                                <rect key="frame" x="20" y="250" width="30" height="30"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IE7-5V-mxc">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="4Hp-aV-PGS">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="share:" target="Ytj-ei-ycH" id="Urj-Sv-zqU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IE7-5V-mxc" firstAttribute="top" secondItem="xAZ-6T-i4j" secondAttribute="top" id="7MG-0Y-ACg"/>
+                                    <constraint firstItem="IE7-5V-mxc" firstAttribute="leading" secondItem="xAZ-6T-i4j" secondAttribute="leading" id="FbY-06-IGu"/>
+                                    <constraint firstAttribute="width" constant="30" id="I3m-ay-8EZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="IE7-5V-mxc" secondAttribute="trailing" id="MGa-72-ITI"/>
+                                    <constraint firstAttribute="height" constant="30" id="a9T-Y6-H6q"/>
+                                    <constraint firstAttribute="bottom" secondItem="IE7-5V-mxc" secondAttribute="bottom" id="x7A-aG-mMq"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xAZ-6T-i4j" firstAttribute="leading" secondItem="6EP-gE-Rmi" secondAttribute="leading" constant="20" symbolic="YES" id="X1e-hx-mEX"/>
+                            <constraint firstItem="xAZ-6T-i4j" firstAttribute="top" secondItem="6EP-gE-Rmi" secondAttribute="top" constant="20" symbolic="YES" id="YN0-sm-NZx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shareButton" destination="IE7-5V-mxc" id="vQf-sc-tOA"/>
+                        <outlet property="shareVisualEffectView" destination="xAZ-6T-i4j" id="WS5-EM-rm1"/>
+                    </connections>
+                </viewController>
+                <customObject id="3y1-rA-xPP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="655"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="NSShareTemplate" width="11" height="16"/>
+    </resources>
 </document>
