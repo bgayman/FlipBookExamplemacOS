@@ -29,6 +29,12 @@ final class VideoViewController: NSViewController {
         avPV.player = AVPlayer(url: url)
         view.addSubview(avPV, positioned: .below, relativeTo: shareVisualEffectView)
         
+        avPV.translatesAutoresizingMaskIntoConstraints = false
+        avPV.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        avPV.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        avPV.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        avPV.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         shareVisualEffectView.wantsLayer = true
         shareVisualEffectView.layer?.cornerRadius = 8.0
         shareVisualEffectView.layer?.masksToBounds = true

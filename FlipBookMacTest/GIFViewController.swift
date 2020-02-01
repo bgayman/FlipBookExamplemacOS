@@ -25,10 +25,17 @@ final class GIFViewController: NSViewController {
         title = "GIF"
         
         let imageView = NSImageView(frame: view.bounds)
-        imageView.animates = true
         
         view.addSubview(imageView, positioned: .below, relativeTo: shareVisualEffectView)
         
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        imageView.animates = true
+
         shareVisualEffectView.wantsLayer = true
         shareVisualEffectView.layer?.cornerRadius = 8.0
         shareVisualEffectView.layer?.masksToBounds = true

@@ -33,6 +33,12 @@ final class LivePhotoViewController: NSViewController {
         
         view.addSubview(livePhotoView, positioned: .below, relativeTo: shareVisualEffectView)
         
+        livePhotoView.translatesAutoresizingMaskIntoConstraints = false
+        livePhotoView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        livePhotoView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        livePhotoView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        livePhotoView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
         shareVisualEffectView.wantsLayer = true
         shareVisualEffectView.layer?.cornerRadius = 8.0
         shareVisualEffectView.layer?.masksToBounds = true
