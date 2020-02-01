@@ -690,7 +690,6 @@
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="480" height="270"/>
-                        <value key="maxSize" type="size" width="480" height="270"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -754,20 +753,26 @@
             <objects>
                 <viewController title="FlipBook" id="XfG-lQ-9wD" customClass="ViewController" customModule="FlipBookMacTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="488" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="0rY-cI-RGu">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="488" height="270"/>
+                            </customView>
+                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBZ-WP-bPw">
+                                <rect key="frame" x="0.0" y="0.0" width="488" height="270"/>
+                            </customView>
+                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pEQ-wz-uLf">
+                                <rect key="frame" x="0.0" y="0.0" width="488" height="270"/>
                             </customView>
                             <progressIndicator hidden="YES" wantsLayer="YES" maxValue="1" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="1qX-t2-XrR">
-                                <rect key="frame" x="20" y="125" width="440" height="20"/>
+                                <rect key="frame" x="20" y="125" width="448" height="20"/>
                             </progressIndicator>
                             <visualEffectView blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="x3F-Cs-fh1">
-                                <rect key="frame" x="0.0" y="230" width="480" height="40"/>
+                                <rect key="frame" x="0.0" y="230" width="488" height="40"/>
                                 <subviews>
                                     <button verticalHuggingPriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="s7p-T8-Pa4">
-                                        <rect key="frame" x="360" y="10" width="100" height="21"/>
+                                        <rect key="frame" x="368" y="10" width="100" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zcv-Ac-YH8"/>
                                         </constraints>
@@ -781,7 +786,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="age-M3-PEh">
-                                        <rect key="frame" x="146" y="8" width="188" height="24"/>
+                                        <rect key="frame" x="150" y="8" width="188" height="24"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="axV-cL-6yI">
                                             <font key="font" metaFont="system"/>
                                             <segments>
@@ -794,13 +799,43 @@
                                             <action selector="changeSegment:" target="XfG-lQ-9wD" id="Bj4-46-fvV"/>
                                         </connections>
                                     </segmentedControl>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1K-pI-bqd">
+                                        <rect key="frame" x="20" y="10" width="124" height="21"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="k4X-rA-2Pb">
+                                                <rect key="frame" x="-2" y="2" width="86" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="CAAnimation:" id="hdw-Zt-eig">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="oUD-4B-ph4">
+                                                <rect key="frame" x="84" y="-2" width="42" height="24"/>
+                                                <connections>
+                                                    <action selector="switchLayerAnimation:" target="XfG-lQ-9wD" id="Cx9-yy-9C2"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="s7p-T8-Pa4" secondAttribute="trailing" constant="20" symbolic="YES" id="0p5-VY-pX8"/>
+                                    <constraint firstItem="age-M3-PEh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b1K-pI-bqd" secondAttribute="trailing" constant="8" symbolic="YES" id="4v9-wQ-Iy7"/>
+                                    <constraint firstItem="s7p-T8-Pa4" firstAttribute="centerY" secondItem="age-M3-PEh" secondAttribute="centerY" id="5Ou-Sm-TJS"/>
+                                    <constraint firstItem="b1K-pI-bqd" firstAttribute="leading" secondItem="x3F-Cs-fh1" secondAttribute="leading" constant="20" symbolic="YES" id="9yb-mF-E2a"/>
                                     <constraint firstAttribute="height" constant="40" id="FY7-HW-a5o"/>
+                                    <constraint firstItem="age-M3-PEh" firstAttribute="centerY" secondItem="b1K-pI-bqd" secondAttribute="centerY" id="V1h-RX-ToC"/>
                                     <constraint firstItem="s7p-T8-Pa4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="age-M3-PEh" secondAttribute="trailing" constant="8" symbolic="YES" id="XV7-8J-SWa"/>
                                     <constraint firstItem="age-M3-PEh" firstAttribute="centerY" secondItem="x3F-Cs-fh1" secondAttribute="centerY" id="bFI-fe-Qd6"/>
-                                    <constraint firstItem="s7p-T8-Pa4" firstAttribute="centerY" secondItem="x3F-Cs-fh1" secondAttribute="centerY" id="iRI-C1-rcx"/>
                                     <constraint firstItem="age-M3-PEh" firstAttribute="centerX" secondItem="x3F-Cs-fh1" secondAttribute="centerX" id="noM-iR-tmC"/>
                                     <constraint firstItem="s7p-T8-Pa4" firstAttribute="height" secondItem="age-M3-PEh" secondAttribute="height" id="xoB-rs-nft"/>
                                 </constraints>
@@ -810,17 +845,27 @@
                             <constraint firstItem="x3F-Cs-fh1" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="3i5-Lm-49P"/>
                             <constraint firstAttribute="trailing" secondItem="x3F-Cs-fh1" secondAttribute="trailing" id="5JM-rQ-inI"/>
                             <constraint firstItem="x3F-Cs-fh1" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5aw-r3-tfH"/>
+                            <constraint firstItem="fBZ-WP-bPw" firstAttribute="centerX" secondItem="0rY-cI-RGu" secondAttribute="centerX" id="9RX-3p-rdD"/>
+                            <constraint firstItem="pEQ-wz-uLf" firstAttribute="centerY" secondItem="fBZ-WP-bPw" secondAttribute="centerY" id="BzC-Kb-DCm"/>
                             <constraint firstItem="1qX-t2-XrR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="EQc-0K-UK2"/>
+                            <constraint firstItem="pEQ-wz-uLf" firstAttribute="width" secondItem="fBZ-WP-bPw" secondAttribute="width" id="GnG-TJ-fhr"/>
                             <constraint firstItem="0rY-cI-RGu" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="O60-HW-XW6"/>
+                            <constraint firstItem="fBZ-WP-bPw" firstAttribute="width" secondItem="0rY-cI-RGu" secondAttribute="width" id="Xl4-tN-e3a"/>
                             <constraint firstAttribute="trailing" secondItem="1qX-t2-XrR" secondAttribute="trailing" constant="20" symbolic="YES" id="d3o-xW-9jC"/>
                             <constraint firstItem="0rY-cI-RGu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="eW5-Ud-kcW"/>
+                            <constraint firstItem="pEQ-wz-uLf" firstAttribute="height" secondItem="fBZ-WP-bPw" secondAttribute="height" id="ekK-OF-2m9"/>
                             <constraint firstAttribute="bottom" secondItem="0rY-cI-RGu" secondAttribute="bottom" id="imQ-Kk-ERe"/>
+                            <constraint firstItem="pEQ-wz-uLf" firstAttribute="centerX" secondItem="fBZ-WP-bPw" secondAttribute="centerX" id="inQ-vR-TKH"/>
                             <constraint firstItem="1qX-t2-XrR" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="sKt-sw-zM6"/>
                             <constraint firstAttribute="trailing" secondItem="0rY-cI-RGu" secondAttribute="trailing" id="wsh-Mt-bJr"/>
+                            <constraint firstItem="fBZ-WP-bPw" firstAttribute="height" secondItem="0rY-cI-RGu" secondAttribute="height" id="xUi-Vf-Xuf"/>
+                            <constraint firstItem="fBZ-WP-bPw" firstAttribute="centerY" secondItem="0rY-cI-RGu" secondAttribute="centerY" id="yuS-xe-0Oq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="containerView" destination="0rY-cI-RGu" id="4UA-78-oYQ"/>
+                        <outlet property="layerContainerView" destination="fBZ-WP-bPw" id="009-ho-Qdy"/>
+                        <outlet property="layerOverlayView" destination="pEQ-wz-uLf" id="VHi-Fc-ivH"/>
                         <outlet property="progressIndicator" destination="1qX-t2-XrR" id="Mua-56-yyi"/>
                         <outlet property="recordViewButton" destination="s7p-T8-Pa4" id="aBY-Nr-SRc"/>
                         <outlet property="segmentControl" destination="age-M3-PEh" id="6cP-cs-EHm"/>

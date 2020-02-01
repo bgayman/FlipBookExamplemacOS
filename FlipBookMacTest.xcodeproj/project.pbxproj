@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2B83C423E4EE7D00899835 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B83C323E4EE7D00899835 /* VideoViewController.swift */; };
+		CD2B83C623E4EEE000899835 /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B83C523E4EEE000899835 /* LivePhotoViewController.swift */; };
+		CD2B83C823E4EF3A00899835 /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B83C723E4EF3A00899835 /* GIFViewController.swift */; };
 		CDB83FBE23DBE722003451F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB83FBD23DBE722003451F9 /* AppDelegate.swift */; };
 		CDB83FC023DBE722003451F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB83FBF23DBE722003451F9 /* ViewController.swift */; };
 		CDB83FC223DBE727003451F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDB83FC123DBE727003451F9 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2B83C323E4EE7D00899835 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		CD2B83C523E4EEE000899835 /* LivePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
+		CD2B83C723E4EF3A00899835 /* GIFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFViewController.swift; sourceTree = "<group>"; };
 		CDB83FBA23DBE722003451F9 /* FlipBookMacTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipBookMacTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDB83FBD23DBE722003451F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDB83FBF23DBE722003451F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +63,9 @@
 			children = (
 				CDB83FBD23DBE722003451F9 /* AppDelegate.swift */,
 				CDB83FBF23DBE722003451F9 /* ViewController.swift */,
+				CD2B83C723E4EF3A00899835 /* GIFViewController.swift */,
+				CD2B83C323E4EE7D00899835 /* VideoViewController.swift */,
+				CD2B83C523E4EEE000899835 /* LivePhotoViewController.swift */,
 				CDB83FC123DBE727003451F9 /* Assets.xcassets */,
 				CDB83FC323DBE727003451F9 /* Main.storyboard */,
 				CDB83FC623DBE727003451F9 /* Info.plist */,
@@ -141,8 +150,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2B83C823E4EF3A00899835 /* GIFViewController.swift in Sources */,
 				CDB83FC023DBE722003451F9 /* ViewController.swift in Sources */,
+				CD2B83C623E4EEE000899835 /* LivePhotoViewController.swift in Sources */,
 				CDB83FBE23DBE722003451F9 /* AppDelegate.swift in Sources */,
+				CD2B83C423E4EE7D00899835 /* VideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
